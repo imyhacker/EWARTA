@@ -1,0 +1,187 @@
+<x-dcore.head />
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <div class="navbar-bg"></div>
+        <x-dcore.nav />
+        <x-dcore.sidebar />
+        <div class="main-content">
+            <section class="section">
+
+
+                <!-- MAIN OF CENTER CONTENT -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>berita</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
+                                            data-target="#tambahberita">
+                                            Tambah Berita
+                                        </button>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
+                                            data-target="#tambahtag">
+                                            Tambah Tag
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END OF CENTER CONTENT -->
+
+
+            </section>
+            <div class="row">
+                <div class="col-md-8">
+                    <section class="section">
+
+
+                        <!-- MAIN OF CENTER CONTENT -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>berita</h4>
+                                    </div>
+                                    <div class="card-body">
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- END OF CENTER CONTENT -->
+
+
+                    </section>
+                </div>
+                <div class="col-md-4">
+                    <section class="section">
+
+
+                        <!-- MAIN OF CENTER CONTENT -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Tag</h4>
+                                    </div>
+                                    <div class="card-body">
+                                      <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th>No</th>
+                                            <th>Tag</th>
+                                            <th>Opt</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          @php $no = 1; @endphp
+                                          @foreach($tag as $t)
+                                          <tr>
+                                            <td>{{$no++}}</td>
+                                            <td>{{$t->tag}}</td>
+                                            <td>
+                                              <a href="" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                          </tr>
+                                          @endforeach
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- END OF CENTER CONTENT -->
+
+
+                    </section>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="tambahberita" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Tambah Berita</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Judul Berita</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Masukkan Judul Berita">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Tag</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Isi Berita</label>
+                                <textarea class="form-control" id="konten" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="tambahtag" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Tambah Tag</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="{{route('upload_tag')}}" method="post">
+                      @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="tag" placeholder="Masukan Tag">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <x-dcore.footer />
+    </div>
+</div>
+<x-dcore.script />
