@@ -55,8 +55,34 @@
                                     <div class="card-header">
                                         <h4>berita</h4>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body table-responsive">
+                                        <table class="table" id="table_berita">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Judul</th>
+                                                    <th>Tag</th>
+                                                    <th>Opt</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @php $no = 1; @endphp
+                                                @foreach($berita as $b)
+                                                <tr>
+                                                    <td>{{$no++}}</td>
+                                                    <td>{{$b->judul}}</td>
+                                                    <td>{{$b->tag}}</td>
+                                                    <td>
+                                                        <a href="{{route('edit', $b->id)}}" class="btn btn-outline-info"><i
+                                                                class="fas fa-edit"></i></a>
 
+                                                        <a href="{{route('hapus_berita', $b->id)}}" class="btn btn-outline-danger"><i
+                                                                class="fas fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
 
@@ -79,28 +105,29 @@
                                     <div class="card-header">
                                         <h4>Tag</h4>
                                     </div>
-                                    <div class="card-body">
-                                      <table class="table">
-                                        <thead>
-                                          <tr>
-                                            <th>No</th>
-                                            <th>Tag</th>
-                                            <th>Opt</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          @php $no = 1; @endphp
-                                          @foreach($tag as $t)
-                                          <tr>
-                                            <td>{{$no++}}</td>
-                                            <td>{{$t->tag}}</td>
-                                            <td>
-                                              <a href="" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a>
-                                            </td>
-                                          </tr>
-                                          @endforeach
-                                        </tbody>
-                                      </table>
+                                    <div class="card-body table-responsive">
+                                        <table class="table" id="table_tag">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Tag</th>
+                                                    <th>Opt</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @php $no = 1; @endphp
+                                                @foreach($tag as $t)
+                                                <tr>
+                                                    <td>{{$no++}}</td>
+                                                    <td>{{$t->tag}}</td>
+                                                    <td>
+                                                        <a href="{{route('hapus_tag', $t->id)}}" class="btn btn-outline-danger btn-sm"><i
+                                                                class="fas fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
 
@@ -127,32 +154,38 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{route('upload_berita')}}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <label>Gambar</label>
+                                <input type="file" class="form-control-file" name="gambar">
+                            </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Judul Berita</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                <input type="text" class="form-control" name="judul"
                                     placeholder="Masukkan Judul Berita">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Tag</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <select class="form-control" name="tag">
+
+
+                                    @foreach($tag as $t)
+                                    <option>{{$t->tag}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Isi Berita</label>
-                                <textarea class="form-control" id="konten" rows="3"></textarea>
+                                <textarea class="form-control" id="konten" name="isi" rows="3"></textarea>
                             </div>
-                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
+                    </form>
+
                 </div>
             </div>
         </div>
@@ -167,16 +200,16 @@
                         </button>
                     </div>
                     <form action="{{route('upload_tag')}}" method="post">
-                      @csrf
-                    <div class="modal-body">
-                        <div class="form-group">
-                          <input type="text" class="form-control" name="tag" placeholder="Masukan Tag">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="tag" placeholder="Masukan Tag">
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
                     </form>
                 </div>
             </div>

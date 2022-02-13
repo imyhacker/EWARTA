@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tag;
+use App\Models\Berita;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -10,7 +11,8 @@ class BeritaController extends Controller
     public function index()
     {
         $tag = Tag::all();
-        return view('Dashboard/berita', compact('tag'));
+        $berita = Berita::orderBy('id', 'DESC')->get();
+        return view('Dashboard/berita', compact('tag', 'berita'));
     }
     public function upload_tag(Request $request)
     {
@@ -20,5 +22,44 @@ class BeritaController extends Controller
             'slug_tag' => \Str::slug($data)
         ]);
         return redirect()->back()->with('sukses', 'SUKSES UPLOAD DATA TAG');
+    }
+    public function hapus_tag($id)
+    {
+        Tag::find($id)->delete();
+        return redirect()->back()->with('sukses', 'SUKSES HAPUS DATA TAG');
+
+    }
+    public function upload_berita(Request $request)
+    {
+        $gambar = $request->file('gambar');
+        $name = $gambar->getClientOriginalName().'.'.$gambar->getClientOriginalExtension();
+        $path = public_path('gambar');
+        $gambar->move($path, $name);
+        Berita::create([
+            'gambar' => $name,
+            'judul' => $request->input('judul'),
+            'tag'   => $request->input('tag'),
+            'isi'   => $request->input('isi'),
+            'slug'  => \Str::random(6),
+        ]);
+        return redirect()->back()->with('sukses', 'SUKSES UPLOAD DATA BERITA');
+    }
+    public function edit($id)
+    {
+        $data = Berita::find($id);
+        $tag = Tag::all();
+        return view('Dashboard/edit_berita', compact('data', 'tag'));
+    }
+    public function update(Request $request, $id)
+    {
+        $data = Berita::find($id)->update($request->all());
+        return redirect()->route('berita')->with('sukses', 'SUKSES UPDATE DATA BERITA');
+
+    }
+    public function hapus_berita($id)
+    {
+        Berita::find($id)->delete();
+        return redirect()->back()->with('sukses', 'SUKSES HAPUS DATA BERITA');
+
     }
 }

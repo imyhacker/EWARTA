@@ -17,11 +17,19 @@
 
   <!-- Page Specific JS File -->
   <script src="https://demo.getstisla.com/assets/js/page/index.js"></script>
-  
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
   <!-- Template JS File -->
   <script src="https://demo.getstisla.com/assets/js/scripts.js"></script>
   <script src="https://demo.getstisla.com/assets/js/custom.js"></script>
   <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+
+  <script>
+    $(document).ready( function () {
+    $('#table_tag').DataTable();
+    $('#table_berita').DataTable();
+
+} );
+  </script>
 <script>
    var konten = document.getElementById("konten");
      CKEDITOR.replace(konten,{

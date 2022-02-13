@@ -15,10 +15,11 @@ class CreateBeritasTable extends Migration
     {
         Schema::create('berita', function (Blueprint $table) {
             $table->id();
+            $table->longText('foto')->nullable();
             $table->string('judul');
             $table->string('tag');
             $table->longText('isi');
-            $table->longText('slug');
+            $table->longText('slug')->nullable();
             $table->timestamps();
         });
     }
