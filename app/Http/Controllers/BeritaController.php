@@ -31,12 +31,19 @@ class BeritaController extends Controller
     }
     public function upload_berita(Request $request)
     {
+        $request->validate([
+            'gambar' => 'required|mimes:jpg,png,jpeg,svg',
+            'judul' => 'required',
+            'tag'   => 'required',
+            'isi'   => 'required',
+        ]);
         $gambar = $request->file('gambar');
         $name = $gambar->getClientOriginalName().'.'.$gambar->getClientOriginalExtension();
         $path = public_path('gambar');
         $gambar->move($path, $name);
+       
         Berita::create([
-            'gambar' => $name,
+            'foto' => $name,
             'judul' => $request->input('judul'),
             'tag'   => $request->input('tag'),
             'isi'   => $request->input('isi'),

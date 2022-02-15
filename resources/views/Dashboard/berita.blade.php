@@ -73,10 +73,11 @@
                                                     <td>{{$b->judul}}</td>
                                                     <td>{{$b->tag}}</td>
                                                     <td>
-                                                        <a href="{{route('edit', $b->id)}}" class="btn btn-outline-info"><i
-                                                                class="fas fa-edit"></i></a>
+                                                        <a href="{{route('edit', $b->id)}}"
+                                                            class="btn btn-outline-info"><i class="fas fa-edit"></i></a>
 
-                                                        <a href="{{route('hapus_berita', $b->id)}}" class="btn btn-outline-danger"><i
+                                                        <a href="{{route('hapus_berita', $b->id)}}"
+                                                            class="btn btn-outline-danger"><i
                                                                 class="fas fa-trash"></i></a>
                                                     </td>
                                                 </tr>
@@ -121,7 +122,8 @@
                                                     <td>{{$no++}}</td>
                                                     <td>{{$t->tag}}</td>
                                                     <td>
-                                                        <a href="{{route('hapus_tag', $t->id)}}" class="btn btn-outline-danger btn-sm"><i
+                                                        <a href="{{route('hapus_tag', $t->id)}}"
+                                                            class="btn btn-outline-danger btn-sm"><i
                                                                 class="fas fa-trash"></i></a>
                                                     </td>
                                                 </tr>
@@ -154,22 +156,44 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{route('upload_berita')}}" method="POST">
+                    @error('gambar')
+                                <div class="alert alert-danger mt-2 mb-2" role="alert">
+                                    {{$message}}
+                                </div>
+                     @enderror
+                     @error('judul')
+                                <div class="alert alert-danger mt-2 mb-2" role="alert">
+                                    {{$message}}
+                                </div>
+                     @enderror
+                     @error('tag')
+                                <div class="alert alert-danger mt-2 mb-2" role="alert">
+                                    {{$message}}
+                                </div>
+                     @enderror
+                     @error('isi')
+                                <div class="alert alert-danger mt-2 mb-2" role="alert">
+                                    {{$message}}
+                                </div>
+                     @enderror
+                        <form action="{{route('upload_berita')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label>Gambar</label>
-                                <input type="file" class="form-control-file" name="gambar">
+                                <input type="file" class="form-control-file @error('gambar') is-invalid @enderror"
+                                    name="gambar">
+                                
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Judul Berita</label>
-                                <input type="text" class="form-control" name="judul"
-                                    placeholder="Masukkan Judul Berita">
+                                <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul"
+                                    placeholder="Masukkan Judul Berita" value="{{old('judul')}}">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Tag</label>
-                                <select class="form-control" name="tag">
+                                <select class="form-control @error('tag') is-invalid @enderror" name="tag">
 
-
+                                    <option disabled selected value>== PILIH TAG ==</option>
                                     @foreach($tag as $t)
                                     <option>{{$t->tag}}</option>
                                     @endforeach
@@ -177,7 +201,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Isi Berita</label>
-                                <textarea class="form-control" id="konten" name="isi" rows="3"></textarea>
+                                <textarea class="form-control @error('isi') is-invalid @enderror" id="konten" name="isi" rows="3">{{old('isi')}}</textarea>
                             </div>
                     </div>
                     <div class="modal-footer">
