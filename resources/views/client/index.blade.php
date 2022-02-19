@@ -19,7 +19,7 @@
     <!-- ======= Services Section ======= -->
 <x-client.service />
     <!-- ======= Portfolio Section ======= -->
-   <x-client.port />
+   <x-client.port :berita="$berita"/>
     <!-- ======= Testimonials Section ======= -->
 <x-client.testi />
     <!-- ======= Team Section ======= -->

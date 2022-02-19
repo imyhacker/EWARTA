@@ -19,8 +19,9 @@ use App\Http\Controllers\ClientController;
 //     return view('welcome');
 // });
 
-Route::group(['prefix' => '/'], function(){
+Route::group(['prefix' => '/'], function($slug = null){
     Route::get('/', [ClientController::class, 'index']);
+    Route::get('/berita/{slug}/selengkapnya', [ClientController::class, 'selengkapnya'])->name('selengkapnya', $slug);
 });
 Auth::routes();
 
