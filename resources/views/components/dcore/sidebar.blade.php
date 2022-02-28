@@ -14,7 +14,7 @@
                 <li><a class="nav-link" href="{{route('berita')}}">Data Berita</a></li>
               </ul>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{route('berita')}}">Data Informasi</a></li>
+                <li><a class="nav-link" href="{{route('info')}}">Data Informasi</a></li>
               </ul>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{route('berita')}}">Data Kontak</a></li>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <img src="{{asset('gambar/'.$berita->foto)}}" class="img-fluid" style="border-radius: 2.5em" alt="">
+               
                 {!! $berita->isi !!}
                 <div id="disqus_thread"></div>
 
