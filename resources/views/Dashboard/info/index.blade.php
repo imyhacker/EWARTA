@@ -49,7 +49,31 @@
                                         <h4>Informasi</h4>
                                     </div>
                                     <div class="card-body table-responsive">
-                                        
+                                        <table class="table" id="table_berita">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Judul</th>
+                                                    <th>Uploader</th>
+                                                    <th>Uploaded At</th>
+                                                    <th>Opt</th>
+                                                </tr>
+                                            </thead>
+                                            @php $no = 1; @endphp
+                                            @foreach($info as $inf)
+                                                <tr>
+                                                    <td>{{$no++}}</td>
+                                                    <td>{{$inf->judul}}</td>
+                                                    <td>{{$inf->uploader}}</td>
+                                                    <td>{{$inf->created_at->diffForHumans()}}</td>
+                                                    <td>
+                                                        <a href="" class="btn btn-outline-info"><i class="fas fa-edit"></i></a>
+                                                        <a href="" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
                                     </div>
                                 </div>
 
@@ -78,20 +102,20 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{route('upload_info')}}" method="post">
+                    <form action="{{route('upload_info')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                         <div class="form-group">
                                 <label>Foto Informasi</label>
-                                <input type="file" class="form-control-file" name="tag">
+                                <input type="file" class="form-control-file" name="foto">
                             </div>
                             <div class="form-group">
                                 <label>Judul Informasi</label>
-                                <input type="text" class="form-control" name="tag" placeholder="Masukan Tag">
+                                <input type="text" class="form-control" name="judul" placeholder="Masukan Judul Informasi">
                             </div>
                             <div class="form-group">
                                 <label>Isi Informasi</label>
-                                <textarea name="" id="konten" cols="30" rows="10"></textarea>
+                                <textarea name="isi" id="konten" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">

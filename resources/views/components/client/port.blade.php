@@ -1,4 +1,4 @@
-<section id="portfolio" class="portfolio">
+<section id="berita" class="portfolio">
       <div class="container">
 
         <div class="section-title">
@@ -27,8 +27,9 @@
           </div>
           </a>
         @endforeach
-       {{$berita->links()}}
         </div>
-
+        <div class="col-md-12 mt-4 d-flex justify-content-center">
+          <a href="" class="btn btn-outline-info shadow-sm" style="border-radius: 40em;">Semua Berita <i class="bi bi-arrow-right"></i></a>
+        </div>
       </div>
     </section><!-- End Portfolio Section -->

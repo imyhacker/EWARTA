@@ -7,24 +7,15 @@
 
   <main id="main">
 
-    <!-- ======= What We Do Section ======= -->
-    <x-client.wh />
-
-    <!-- ======= About Section ======= -->
-  <x-client.about />
-    <!-- ======= Skills Section ======= -->
- <x-client.skill />
     <!-- ======= Counts Section ======= -->
 <x-client.count />
+<x-client.about />
+
     <!-- ======= Services Section ======= -->
-<x-client.service />
+<x-client.service :info="$info" />
     <!-- ======= Portfolio Section ======= -->
    <x-client.port :berita="$berita"/>
-    <!-- ======= Testimonials Section ======= -->
-<x-client.testi />
-    <!-- ======= Team Section ======= -->
- <x-client.team />
-    <!-- ======= Contact Section ======= -->
+    
  <x-client.contact />
   </main><!-- End #main -->
 

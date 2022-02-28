@@ -1,55 +1,36 @@
-<section id="services" class="services section-bg">
-      <div class="container">
+<section id="portfolio" class="portfolio section-bg">
+    <div class="container">
 
         <div class="section-title">
-          <h2>Services</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+            <h2>Informasi Terbaru</h2>
+            <p>Beberapa Informasi Terbaru</p>
         </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="icon-box">
-              <i class="bi bi-briefcase"></i>
-              <h4><a href="#">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-lg-0">
-            <div class="icon-box">
-              <i class="bi bi-card-checklist"></i>
-              <h4><a href="#">Dolor Sitema</a></h4>
-              <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4">
-            <div class="icon-box">
-              <i class="bi bi-bar-chart"></i>
-              <h4><a href="#">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4">
-            <div class="icon-box">
-              <i class="bi bi-binoculars"></i>
-              <h4><a href="#">Nemo Enim</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4">
-            <div class="icon-box">
-              <i class="bi bi-brightness-high"></i>
-              <h4><a href="#">Magni Dolore</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4">
-            <div class="icon-box">
-              <i class="bi bi-calendar4-week"></i>
-              <h4><a href="#">Eiusmod Tempor</a></h4>
-              <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </section><!-- End Services Section -->
+        <div class="row portfolio-container">
+            @foreach($info as $in)
+            <a href="{{route('selengkapnya', $in->slug_info)}}">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+                    <div class="portfolio-wrap">
+                        <figure>
+                            <img src="{{asset('gambar_info/'.$in->foto)}}" style="object-fit: cover;" class="img-fluid"
+                                alt="">
+
+                        </figure>
+
+                        <div class="portfolio-info">
+                            <h4><a href="{{route('selengkapnya', $in->slug_info)}}"
+                                    style="text-transform: Capitalize">{{Str::limit($in->judul, 20)}} </a></h4>
+                            <p>{{$in->created_at->diffForHumans()}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </a>
+            @endforeach
+        </div>
+        <div class="col-md-12 mt-4 d-flex justify-content-center">
+          <a href="" class="btn btn-outline-info shadow-sm" style="border-radius: 40em;">Semua Informasi <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+</section><!-- End Portfolio Section -->

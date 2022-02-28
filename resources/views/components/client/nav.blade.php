@@ -10,11 +10,12 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-          <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
-          <li><a class="nav-link scrollto" href="#services">Informasi</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Kontak</a></li>
-          <li><a class="nav-link scrollto" href="#testimonials">Login</a></li>
+          <li><a class="nav-link" href="#hero">Beranda</a></li>
+          <li><a class="nav-link" href="#about">Tentang Kami</a></li>
+          <li><a class="nav-link" href="#portfolio">Informasi</a></li>
+          <li><a class="nav-link" href="#berita">Berita</a></li>
+          <li><a class="nav-link" href="#contact">Kontak</a></li>
+          <li><a class="nav-link" href="#testimonials">Login</a></li>
          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
