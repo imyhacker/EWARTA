@@ -13,7 +13,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Informasi</h4>
+                                <h4>Pengaturan Aplikasi</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -21,7 +21,7 @@
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
                                             data-target="#tambahinfo">
-                                            Tambah Informasi
+                                            Edit / Update Aplikasi
                                         </button>
 
                                     </div>
@@ -46,34 +46,10 @@
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4>Informasi</h4>
+                                        <h4>Pengaturan Aplikasi</h4>
                                     </div>
                                     <div class="card-body table-responsive">
-                                        <table class="table" id="table_berita">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Judul</th>
-                                                    <th>Uploader</th>
-                                                    <th>Uploaded At</th>
-                                                    <th>Opt</th>
-                                                </tr>
-                                            </thead>
-                                            @php $no = 1; @endphp
-                                            @foreach($info as $inf)
-                                                <tr>
-                                                    <td>{{$no++}}</td>
-                                                    <td>{{$inf->judul}}</td>
-                                                    <td>{{$inf->uploader}}</td>
-                                                    <td>{{$inf->created_at->diffForHumans()}}</td>
-                                                    <td>
-                                                        <a href="{{route('edit_info',$inf->id)}}" class="btn btn-outline-info"><i class="fas fa-edit"></i></a>
-                                                        <a href="{{route('hapus_info', $inf->id)}}" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
-
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </table>
+                                       
                                     </div>
                                 </div>
 
@@ -97,25 +73,37 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Tambah Informasi</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Modal Pengaturan</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{route('upload_info')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('upload_setting')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                         <div class="form-group">
-                                <label>Foto Informasi</label>
-                                <input type="file" class="form-control-file" name="foto">
+                                <label>Foto Depan</label>
+                                <input type="file" class="form-control-file" name="foto_depan">
                             </div>
                             <div class="form-group">
-                                <label>Judul Informasi</label>
-                                <input type="text" class="form-control" name="judul" placeholder="Masukan Judul Informasi">
+                                <label>Nama Aplikasi</label>
+                                <input type="text" class="form-control" name="nama_aplikasi" placeholder="Masukan Judul Informasi">
                             </div>
                             <div class="form-group">
-                                <label>Isi Informasi</label>
-                                <textarea name="isi" id="konten" cols="30" rows="10"></textarea>
+                                <label>Yel Yel</label>
+                                <input type="text" class="form-control" name="yel_yel" placeholder="Masukan Judul Informasi">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="Masukan Judul Informasi">
+                            </div>
+                            <div class="form-group">
+                                <label>Telpon</label>
+                                <input type="number" class="form-control" name="telpon" placeholder="Masukan Judul Informasi">
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat</label>
+                                <textarea name="alamat" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">

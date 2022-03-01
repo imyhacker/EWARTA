@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\PengaturanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +41,15 @@ Route::controller(BeritaController::class)->prefix('home/berita')->group(functio
     Route::post('/{id}/edit/update','update')->name('update', $id);
 });
 
-Route::controller(InfoController::class)->prefix('home/info')->group(function(){
+Route::controller(InfoController::class)->prefix('home/info')->group(function($id = null){
     Route::get('/', 'index')->name('info');
+    Route::get('/{id}/edit', 'edit')->name('edit_info', $id);
+    Route::post('/{id}/edit/update','update')->name('update_info', $id);
+    Route::get('/{id}/hapus_info', 'hapus_info')->name('hapus_info', $id);
     Route::post('/upload_info', 'upload_info')->name('upload_info');
+});
+
+Route::controller(PengaturanController::class)->prefix('home/pengaturan')->group(function(){
+    Route::get('/', 'index')->name('pengaturan');
+    Route::post('/upload_setting', 'upload_setting')->name('upload_setting');
 });

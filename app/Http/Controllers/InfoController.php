@@ -38,4 +38,47 @@ class InfoController extends Controller
         ]);
         return redirect()->back()->with('sukses', 'Data berhasil diupload');
     }
+    public function edit($id)
+    {
+        $data = Info::find($id);
+        return view('Dashboard.info.edit', compact('data'));
+    }
+    public function update(Request $request, $id)
+    {
+        if ($request->hasFile('foto') == true) {
+            $file = $request->file('foto');
+        $path = 'gambar_info';
+        $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+        $file->move($path, $name);
+
+        $judul = $request->input('judul');
+        $isi = $request->input('isi');
+
+        $data = Info::find($id)->update([
+            'foto' => $name,
+            'judul' => $judul,
+            'isi' => $isi,
+            'uploader' => Auth::user()->name
+        ]);
+        return redirect()->back()->with('sukses', 'Data berhasil Di Update');
+        }
+        elseif ($request->hasFile('foto') == false) {
+            $judul = $request->input('judul');
+        $isi = $request->input('isi');
+
+        $data = Info::find($id)->update([
+            'judul' => $judul,
+            'isi' => $isi,
+            'uploader' => Auth::user()->name
+        ]);
+        return redirect()->route('info')->with('sukses', 'Data berhasil Di Update');
+        }
+
+
+    }
+    public function hapus_info($id)
+    {
+        $data = Info::find($id)->delete();
+        return redirect()->back()->with('sukses', 'Data berhasil dihapus');
+    }
 }
