@@ -48,8 +48,30 @@
                                     <div class="card-header">
                                         <h4>Pengaturan Aplikasi</h4>
                                     </div>
-                                    <div class="card-body table-responsive">
-                                       
+                                    <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                           Nama Aplikasi : {{$data->nama_aplikasi ?? "-"}}
+                                        </div>
+                                        <div class="col-md-6">
+                                          Slogan Aplikasi : {{$data->yel_yel ?? "-"}}
+                                        </div>
+                                        <div class="col-md-6">
+                                           Email Aplikasi : {{$data->email ?? "-"}}
+                                        </div>
+                                        <div class="col-md-6">
+                                            Telepon Admin : {{$data->telepon ?? "-"}}
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            Alamat : {{$data->alamat ?? "-"}}
+                                        </div>
+                                       <div class="col-md-12 mt-4">
+                                           <h3>
+                                           <a href="{{url('/')}}" style="text-decoration: none;">Klik Disini Untuk Lihat Hasilnya</a>
+                                           </h3>
+                                       </div>
+                                    </div>
                                     </div>
                                 </div>
 
@@ -81,6 +103,7 @@
                     <form action="{{route('upload_setting')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
+                            <p class="text-danger">*Note : Jika Ingin Update Datanya Di Mohon Diisi Semua Formnya.</p>
                         <div class="form-group">
                                 <label>Foto Depan</label>
                                 <input type="file" class="form-control-file" name="foto_depan">
@@ -99,7 +122,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Telpon</label>
-                                <input type="number" class="form-control" name="telpon" placeholder="Masukan Judul Informasi">
+                                <input type="number" class="form-control" name="telepon" placeholder="Masukan Judul Informasi">
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>

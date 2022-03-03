@@ -9,5 +9,5 @@ class Aplikasi extends Model
 {
     use HasFactory;
     protected $table = 'aplikasi';
-    protected $fillable = ['foto_depan', 'nama_aplikasi', 'yel_yel'];
+    protected $guarded = [];
 }

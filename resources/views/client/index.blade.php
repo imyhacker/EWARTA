@@ -3,7 +3,7 @@
 
 <x-client.nav />
   <!-- ======= Hero Section ======= -->
-  <x-client.hero />
+  <x-client.hero :depan1="$depan1"/>
 
   <main id="main">
 
@@ -16,7 +16,7 @@
     <!-- ======= Portfolio Section ======= -->
    <x-client.port :berita="$berita"/>
     
- <x-client.contact />
+ <x-client.contact :depan2="$depan2"/>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
