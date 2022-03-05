@@ -6,7 +6,7 @@
         <x-dcore.sidebar />
         <div class="main-content">
             <section class="section">
-                <x-dcore.card />
+                <x-dcore.card :app="$app" :tentang="$tentang" :tb="$tb" :ti="$ti"/>
 
                 <!-- MAIN OF CENTER CONTENT -->
                 <div class="row">
@@ -46,4 +46,6 @@
         <x-dcore.footer />
     </div>
 </div>
+
+
 <x-dcore.script />

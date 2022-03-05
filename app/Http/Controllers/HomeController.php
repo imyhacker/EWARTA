@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Dashboard/index');
+        $tb = \App\Models\Berita::count();
+        $ti = \App\Models\Info::count();
+        $app = \App\Models\Aplikasi::first();
+        $tentang = \App\Models\Tentang::first();
+        return view('Dashboard/index',compact('app','tentang','tb','ti'));
     }
 }

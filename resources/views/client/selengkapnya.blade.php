@@ -1,7 +1,7 @@
 <x-client.head />
 <body>
 
-<x-client.nav />
+<x-client.nav :depan1="$depan1"/>
   <!-- ======= Hero Section ======= -->
   <x-client.hero2 :berita="$berita" />
 

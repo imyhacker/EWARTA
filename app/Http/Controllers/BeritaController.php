@@ -38,7 +38,7 @@ class BeritaController extends Controller
             'isi'   => 'required',
         ]);
         $gambar = $request->file('gambar');
-        $name = $gambar->getClientOriginalName().'.'.$gambar->getClientOriginalExtension();
+        $name = date('YmdHis').'.'.$gambar->getClientOriginalExtension();
         $path = public_path('gambar');
         $gambar->move($path, $name);
        

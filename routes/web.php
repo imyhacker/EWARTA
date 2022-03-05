@@ -52,4 +52,5 @@ Route::controller(InfoController::class)->prefix('home/info')->group(function($i
 Route::controller(PengaturanController::class)->prefix('home/pengaturan')->group(function(){
     Route::get('/', 'index')->name('pengaturan');
     Route::post('/upload_setting', 'upload_setting')->name('upload_setting');
+    Route::post('/upload_tentang', 'upload_tentang')->name('upload_tentang');
 });

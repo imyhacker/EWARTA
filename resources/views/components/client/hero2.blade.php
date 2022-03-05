@@ -2,7 +2,7 @@
   #hero2 {
   width: 100%;
   height: 60vh;
-  background: url({{asset('gambar_info/'.$berita->foto)}}) center center;
+  background: url({{url('/gambar/'.$berita->foto)}}) center center;
   background-size: cover;
   position: relative;
   margin-top: 70px;

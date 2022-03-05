@@ -16,13 +16,21 @@ class ClientController extends Controller
         $info = Info::orderBy('id', 'DESC')->limit(6)->get();
         $depan1 = Aplikasi::first();
         $depan2 = Aplikasi::first();
-        
+        $t = \App\Models\Tentang::first();
 
-        return view('client/index', compact('berita', 'info', 'depan1', 'depan2'));
+
+        $tb = Berita::count();
+        $tbh = Berita::whereDate('created_at', date('Y-m-d'))->count();
+        $ti = Info::count();
+        $tih = Info::whereDate('created_at', date('Y-m-d'))->count();
+
+        return view('client/index', compact('berita', 'info', 'depan1', 'depan2', 'tb', 'tbh', 'ti', 'tih', 't'));
     }
     public function selengkapnya($slug)
     {
+        $depan1 = Aplikasi::first();
+
         $berita = Berita::where('slug', $slug)->first();
-        return view('client/selengkapnya', compact('berita'));
+        return view('client/selengkapnya', compact('berita', 'depan1'));
     }
 }

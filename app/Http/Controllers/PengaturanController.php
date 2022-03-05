@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aplikasi;
+use App\Models\Tentang;
 use Illuminate\Http\Request;
 
 class PengaturanController extends Controller
@@ -66,5 +67,47 @@ class PengaturanController extends Controller
                 }
         }
         
+    }
+    public function upload_tentang(Request $request)
+    {
+        $cek = Tentang::first();
+        $file = $request->file('gambar');
+        if($cek == null){
+            if($file == null){
+            $data = Tentang::create([
+                'tentang' => $request->input('tentang'),
+                
+            ]);
+            return redirect()->back()->with('sukses', 'Berhasil Update Data');
+            }else{
+                $path = 'gambar_tentang';
+                $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+                $file->move($path, $name);
+                $data = Tentang::create([
+                    'gambar' => $name,
+                    'tentang' => $request->input('tentang'),
+                    
+                ]);
+                return redirect()->back()->with('sukses', 'Berhasil Update Data');
+            }
+        }else{
+            if($file == null){
+                $data = Tentang::first()->update([
+                    'tentang' => $request->input('tentang'),
+
+                ]);
+                return redirect()->back()->with('sukses', 'Berhasil Update Data');
+                }else{
+                    $path = 'gambar_tentang';
+                    $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
+                    $file->move($path, $name);
+                    $data = Tentang::first()->update([
+                        'gambar' => $name,
+                        'tentang' => $request->input('tentang'),
+                        
+                    ]);
+                    return redirect()->back()->with('sukses', 'Berhasil Update Data');
+                }
+        }
     }
 }

@@ -7,9 +7,9 @@
 
   <main id="main">
 
-    <!-- ======= Counts Section ======= -->
-<x-client.count />
-<x-client.about />
+    <!-- ======= Counts Section ======= 'total_berita', 'total_berita_hari', 'total_info', 'total_info_hari'  -->
+<x-client.count :tb="$tb" :tbh="$tbh" :ti="$ti" :tih="$tih"/>
+<x-client.about :t="$t"/>
 
     <!-- ======= Services Section ======= -->
 <x-client.service :info="$info" />
@@ -22,4 +22,6 @@
   <!-- ======= Footer ======= -->
 <x-client.footer />
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-<x-client.script />
+
+  <x-client.script />
+<!-- Modal -->
