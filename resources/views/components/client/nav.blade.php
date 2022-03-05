@@ -14,7 +14,7 @@
           <li><a class="nav-link" href="#about">Tentang Kami</a></li>
           <li><a class="nav-link" href="#portfolio">Informasi</a></li>
           <li><a class="nav-link" href="#berita">Berita</a></li>
-          <li><a class="nav-link" href="#contact">Kontak</a></li>
+          <li><a class="nav-link" href="https://wa.me/{{$depan1->telepon ?? 'https://wa.me'}}?text=Halo%20Admin%20Saya%20Ingin%20Mengajukan%20Berita%20Hari%20Ini%20Yang%20Sedang%20Terjadi%20Di%20Desa%20Tegalurung">Kontak</a></li>
           <li><a class="nav-link" href="#testimonials">Login</a></li>
          
         </ul>

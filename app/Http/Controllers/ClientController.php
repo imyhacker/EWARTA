@@ -16,6 +16,7 @@ class ClientController extends Controller
         $info = Info::orderBy('id', 'DESC')->limit(6)->get();
         $depan1 = Aplikasi::first();
         $depan2 = Aplikasi::first();
+        
 
         return view('client/index', compact('berita', 'info', 'depan1', 'depan2'));
     }

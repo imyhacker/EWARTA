@@ -1,8 +1,10 @@
+
+
 <style>
   #hero2 {
   width: 100%;
-  height: 60vh;
-  background: url({{asset('gambar_depan/'.$depan1->foto_depan)}}) center center;
+  height: 80vh;
+  background: url(@if($depan1 == NULL) @else {{asset('gambar_depan/'. $depan1->foto_depan)}} @endif) center center;
   background-size: cover;
   position: relative;
   margin-top: 70px;
@@ -54,8 +56,8 @@
 </style>
 <section id="hero2" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
-      <h1>{{$depan1->nama_aplikasi}}</h1>
-      <h2>{{$depan1->yel_yel}}</h2>
+      <h1>{{$depan1->nama_aplikasi ?? config('app.name')}}</h1>
+      <h2>{{$depan1->yel_yel ?? 'Belum ada slogan'}}</h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->

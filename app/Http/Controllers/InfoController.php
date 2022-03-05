@@ -15,12 +15,6 @@ class InfoController extends Controller
     }
     public function upload_info(Request $request)
     {
-        $request->validate([
-            'judul' => 'required',
-            'isi' => 'required',
-            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-        
         $file = $request->file('foto');
         $path = 'gambar_info';
         $name = date('YmdHis').'.'.$file->getClientOriginalExtension();
