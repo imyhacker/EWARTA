@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Aplikasi;
-use App\Models\Berita;
 use App\Models\Info;
+use App\Models\Berita;
+use App\Models\Tentang;
+use App\Models\Aplikasi;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -32,5 +33,19 @@ class ClientController extends Controller
 
         $berita = Berita::where('slug', $slug)->first();
         return view('client/selengkapnya', compact('berita', 'depan1'));
+    }
+    public function tentang_kami()
+    {
+        $depan1 = Aplikasi::first();
+        $tentang = Tentang::first();
+        return view('client/tentang/index', compact('depan1', 'tentang'));
+    }
+    public function informasi()
+    {
+        $depan1 = Aplikasi::first();
+        $info = Info::orderBy('id', 'DESC')->get();
+        $tentang = Tentang::first();
+
+        return view('client/informasi/index', compact('depan1', 'info', 'tentang'));
     }
 }

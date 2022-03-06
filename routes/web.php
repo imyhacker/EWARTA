@@ -24,7 +24,10 @@ use App\Http\Controllers\PengaturanController;
 Route::group(['prefix' => '/'], function($slug = null){
     Route::get('/', [ClientController::class, 'index']);
     Route::get('/berita/{slug}/selengkapnya', [ClientController::class, 'selengkapnya'])->name('selengkapnya', $slug);
+    Route::get('/tentang', [ClientController::class, 'tentang_kami'])->name('tentang_kami');
+    Route::get('/informasi', [ClientController::class, 'informasi'])->name('informasi');
 });
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

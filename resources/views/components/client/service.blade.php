@@ -29,8 +29,6 @@
             </a>
             @endforeach
         </div>
-        <div class="col-md-12 mt-4 d-flex justify-content-center">
-          <a href="" class="btn btn-outline-info shadow-sm" style="border-radius: 40em;">Semua Informasi <i class="bi bi-arrow-right"></i></a>
-        </div>
+        
     </div>
 </section><!-- End Portfolio Section -->
