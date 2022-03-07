@@ -26,9 +26,10 @@ Route::group(['prefix' => '/'], function($slug = null){
     Route::get('/berita/{slug}/selengkapnya', [ClientController::class, 'selengkapnya'])->name('selengkapnya', $slug);
     Route::get('/tentang', [ClientController::class, 'tentang_kami'])->name('tentang_kami');
     Route::get('/informasi', [ClientController::class, 'informasi'])->name('informasi');
+    Route::get('/berita', [ClientController::class, 'berita'])->name('semua_berita');
 });
 
-Auth::routes();
+Auth::routes(['register'=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

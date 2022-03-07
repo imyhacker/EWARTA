@@ -88,7 +88,16 @@
 @endif
 <script>
    var konten = document.getElementById("konten");
+   
      CKEDITOR.replace(konten,{
+     language:'en-gb'
+   });
+   CKEDITOR.config.allowedContent = true;
+</script>
+<script>
+   var konten2 = document.getElementById("konten2");
+   
+     CKEDITOR.replace(konten2,{
      language:'en-gb'
    });
    CKEDITOR.config.allowedContent = true;

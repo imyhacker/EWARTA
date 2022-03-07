@@ -47,7 +47,7 @@
         </div>
         <div class="form-group">
             <label>Tentang Kami</label>
-            <textarea class="form-control" name="tentang" rows="3" id="konten"></textarea>
+            <textarea class="form-control" name="tentang" rows="3" id="konten2"></textarea>
         </div>
       </div>
       <div class="modal-footer">

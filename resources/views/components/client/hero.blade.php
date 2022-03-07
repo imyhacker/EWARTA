@@ -58,6 +58,6 @@
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>{{$depan1->nama_aplikasi ?? config('app.name')}}</h1>
       <h2>{{$depan1->yel_yel ?? 'Belum ada slogan'}}</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <a href="{{route('tentang_kami')}}" class="btn-get-started scrollto">Siapa Kami</a>
     </div>
   </section><!-- End Hero -->

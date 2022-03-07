@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->longText('foto');
             $table->string('judul');
-            $table->string('isi');
+            $table->longText('isi');
             $table->string('uploader');
             $table->longText('slug_info')->nullable();
             $table->timestamps();

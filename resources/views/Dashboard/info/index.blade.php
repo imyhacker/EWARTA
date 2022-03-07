@@ -115,7 +115,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Isi Informasi</label>
-                                <textarea name="isi" id="konten" cols="30" rows="10"></textarea>
+                                <textarea name="isi" class="form-control" id="konten" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">

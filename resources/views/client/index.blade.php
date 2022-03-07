@@ -20,7 +20,7 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-<x-client.footer />
+<x-client.footer :depan1="$depan1"/>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <x-client.script />

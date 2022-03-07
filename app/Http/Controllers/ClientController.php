@@ -48,4 +48,12 @@ class ClientController extends Controller
 
         return view('client/informasi/index', compact('depan1', 'info', 'tentang'));
     }
+    public function berita()
+    {
+        $depan1 = Aplikasi::first();
+        $berita = berita::orderBy('id', 'DESC')->get();
+        $tentang = Tentang::first();
+
+        return view('client/berita/index', compact('depan1', 'berita', 'tentang'));
+    }
 }
