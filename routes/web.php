@@ -21,9 +21,10 @@ use App\Http\Controllers\PengaturanController;
 //     return view('welcome');
 // });
 
-Route::group(['prefix' => '/'], function($slug = null){
+Route::group(['prefix' => '/'], function($slug = null, $slug_info = NULL){
     Route::get('/', [ClientController::class, 'index']);
     Route::get('/berita/{slug}/selengkapnya', [ClientController::class, 'selengkapnya'])->name('selengkapnya', $slug);
+    Route::get('/informasi/{slug_info}/selengkapnya', [ClientController::class, 'selengkapnya_info'])->name('selengkapnya_info', $slug_info);
     Route::get('/tentang', [ClientController::class, 'tentang_kami'])->name('tentang_kami');
     Route::get('/informasi', [ClientController::class, 'informasi'])->name('informasi');
     Route::get('/berita', [ClientController::class, 'berita'])->name('semua_berita');

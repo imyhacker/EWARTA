@@ -9,7 +9,7 @@
 
         <div class="row portfolio-container">
             @foreach($info as $in)
-            <a href="{{route('selengkapnya', $in->slug_info)}}">
+            <a href="{{route('selengkapnya_info', $in->slug_info)}}">
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
                     <div class="portfolio-wrap">
                         <figure>

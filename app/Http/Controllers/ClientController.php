@@ -34,6 +34,13 @@ class ClientController extends Controller
         $berita = Berita::where('slug', $slug)->first();
         return view('client/selengkapnya', compact('berita', 'depan1'));
     }
+    public function selengkapnya_info($slug_info)
+    {
+        $depan1 = Aplikasi::first();
+        $info = Info::where('slug_info', $slug_info)->first();
+        return view('client/selengkapnya_info', compact('info', 'depan1'));
+
+    }
     public function tentang_kami()
     {
         $depan1 = Aplikasi::first();

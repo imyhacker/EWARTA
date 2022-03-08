@@ -56,6 +56,6 @@
 </style>
 <section id="hero2" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
-      <h1>Pojok Berita</h1>
+      <h1>Berita</h1>
     </div>
   </section><!-- End Hero -->
