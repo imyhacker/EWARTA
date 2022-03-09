@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                
-                {!! $tentang->tentang !!}
+                {!! $tentang->tentang ?? 'Belum ada Tentang Kami' !!}
 
             </div>
             
