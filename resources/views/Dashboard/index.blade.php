@@ -17,19 +17,16 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-4 mt-3">
-                                      <a href="" class="btn btn-outline-success btn-block">Berita <i class="fas fa-arrow-right"></i></a>
+                                    <div class="col-md-6 mt-3">
+                                      <a href="{{route('berita')}}" class="btn btn-outline-success btn-block">Berita <i class="fas fa-arrow-right"></i></a>
                                     </div>
-                                    <div class="col-md-4 mt-3">
-                                    <a href="" class="btn btn-outline-info btn-block">Informasi <i class="fas fa-arrow-right"></i></a>
+                                    <div class="col-md-6 mt-3">
+                                    <a href="{{route('info')}}" class="btn btn-outline-info btn-block">Informasi <i class="fas fa-arrow-right"></i></a>
 
                                     </div>
-                                    <div class="col-md-4 mt-3">
-                                    <a href="" class="btn btn-outline-warning btn-block">Kontak <i class="fas fa-arrow-right"></i></a>
-
-                                    </div>
+                                    
                                     <div class="col-md-12 mt-3">
-                                    <a href="" class="btn btn-outline-danger btn-block">Setting Aplikasi <i class="fas fa-arrow-right"></i></a>
+                                    <a href="{{route('pengaturan')}}" class="btn btn-outline-danger btn-block">Setting Aplikasi <i class="fas fa-arrow-right"></i></a>
 
                                     </div>
                                 </div>

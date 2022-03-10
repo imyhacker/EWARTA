@@ -21,7 +21,6 @@
           <li><i class="bx bx-chevron-right"></i> <a href="{{route('tentang_kami')}}">Tentang Kami</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="{{route('informasi')}}">Informasi</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="{{route('semua_berita')}}">Berita</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="{{url('/login')}}">Login</a></li>
         </ul>
       </div>
 

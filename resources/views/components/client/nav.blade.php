@@ -15,7 +15,6 @@
           <li><a class="nav-link" href="{{route('informasi')}}">Informasi</a></li>
           <li><a class="nav-link" href="{{route('semua_berita')}}">Berita</a></li>
           <li><a class="nav-link" href="https://wa.me/{{$depan1->telepon ?? ''}}?text=Halo%20Admin%20Saya%20Ingin%20Mengajukan%20Berita%20Hari%20Ini%20Yang%20Sedang%20Terjadi%20Di%20Desa%20Tegalurung">Kontak</a></li>
-          <li><a class="nav-link" href="{{url('/login')}}">Login</a></li>
          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
