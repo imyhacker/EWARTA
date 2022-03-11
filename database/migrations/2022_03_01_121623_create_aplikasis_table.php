@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->longText('foto_depan')->nullable();
             $table->string('nama_aplikasi')->nullable();
+            $table->string('judul_aplikasi')->nullable();
             $table->string('yel_yel')->nullable();
             $table->string('email')->nullable();
             $table->string('telepon')->nullable();

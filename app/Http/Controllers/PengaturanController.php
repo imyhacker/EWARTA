@@ -25,6 +25,7 @@ class PengaturanController extends Controller
                 'email' => $request->input('email'),
                 'telepon' => $request->input('telepon'),
                 'alamat' => $request->input('alamat'),
+                'judul_aplikasi' => $request->input('judul_aplikasi')
             ]);
             return redirect()->back()->with('sukses', 'Berhasil Update Data');
             }else{
@@ -38,6 +39,8 @@ class PengaturanController extends Controller
                     'email' => $request->input('email'),
                     'telepon' => $request->input('telepon'),
                     'alamat' => $request->input('alamat'),
+                    'judul_aplikasi' => $request->input('judul_aplikasi')
+
                 ]);
                 return redirect()->back()->with('sukses', 'Berhasil Update Data');
             }
@@ -62,6 +65,8 @@ class PengaturanController extends Controller
                         'email' => $request->input('email'),
                         'telepon' => $request->input('telepon'),
                         'alamat' => $request->input('alamat'),
+                        'judul_aplikasi' => $request->input('judul_aplikasi')
+
                     ]);
                     return redirect()->back()->with('sukses', 'Berhasil Update Data');
                 }

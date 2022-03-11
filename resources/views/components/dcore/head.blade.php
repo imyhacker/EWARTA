@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>{{config('app.name')}}</title>
+  <title>E-WARTA SATU PORTAL BERITA DAN INFORMASI TERBARU</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://demo.getstisla.com/assets/modules/bootstrap/css/bootstrap.min.css">
