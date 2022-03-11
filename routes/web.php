@@ -30,7 +30,7 @@ Route::group(['prefix' => '/'], function($slug = null, $slug_info = NULL){
     Route::get('/berita', [ClientController::class, 'berita'])->name('semua_berita');
 });
 
-Auth::routes(['register'=>true]);
+Auth::routes(['register'=>false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
