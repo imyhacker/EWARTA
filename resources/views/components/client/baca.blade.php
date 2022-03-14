@@ -12,11 +12,9 @@
                     <div class="col-md-12">
                         <h3>Tag</h3>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                            <li class="list-group-item">A fourth item</li>
-                            <li class="list-group-item">And a fifth one</li>
+                            @foreach($tag as $t)
+                            <li class="list-group-item" style="text-transform: capitalize;"><a href="" style="text-decoration: none;">{{$t->tag}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="col-md-12 mt-4">

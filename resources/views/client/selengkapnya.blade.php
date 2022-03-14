@@ -8,7 +8,7 @@
   <main id="main">
 
     <!-- ======= What We Do Section ======= -->
-    <x-client.baca :berita="$berita"/>
+    <x-client.baca :berita="$berita" :tag="$tag"/>
 
   </main><!-- End #main -->
 

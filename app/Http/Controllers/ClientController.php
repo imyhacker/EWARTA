@@ -6,6 +6,7 @@ use App\Models\Info;
 use App\Models\Berita;
 use App\Models\Tentang;
 use App\Models\Aplikasi;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -30,9 +31,9 @@ class ClientController extends Controller
     public function selengkapnya($slug)
     {
         $depan1 = Aplikasi::first();
-
+        $tag = Tag::all();
         $berita = Berita::where('slug', $slug)->first();
-        return view('client/selengkapnya', compact('berita', 'depan1'));
+        return view('client/selengkapnya', compact('berita', 'depan1', 'tag'));
     }
     public function selengkapnya_info($slug_info)
     {
