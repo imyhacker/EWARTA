@@ -113,7 +113,7 @@
                                 <input type="text" class="form-control" name="nama_aplikasi" placeholder="Masukan Judul Informasi">
                             </div>
                             <div class="form-group">
-                                <label>Judul Atas Aplikasi</label>
+                                <label>Copyright Aplikasi</label>
                                 <input type="text" class="form-control" name="judul_aplikasi" placeholder="Masukan Judul Informasi">
                             </div>
                             <div class="form-group">

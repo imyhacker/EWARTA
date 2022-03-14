@@ -32,7 +32,7 @@
 
   <div class="me-md-auto text-center text-md-start">
     <div class="copyright">
-      &copy; Copyright <strong><span>{{$depan1->nama_aplikasi ?? config('app.name')}}</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>{{$depan1->judul_aplikasi ?? config('app.name')}}</span></strong>. All Rights Reserved
     </div>
 
   </div>
