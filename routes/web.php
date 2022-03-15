@@ -30,7 +30,7 @@ Route::group(['prefix' => '/'], function($slug = null, $slug_info = NULL){
     Route::get('/berita', [ClientController::class, 'berita'])->name('semua_berita');
 });
 
-Auth::routes(['register'=>true]);
+Auth::routes(['register'=>false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -58,4 +58,5 @@ Route::controller(PengaturanController::class)->prefix('home/pengaturan')->group
     Route::get('/', 'index')->name('pengaturan');
     Route::post('/upload_setting', 'upload_setting')->name('upload_setting');
     Route::post('/upload_tentang', 'upload_tentang')->name('upload_tentang');
+    Route::post('/upload_akun', 'upload_akun')->name('upload_akun');
 });

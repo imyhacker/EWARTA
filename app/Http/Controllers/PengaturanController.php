@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Aplikasi;
 use App\Models\Tentang;
+use App\Models\Aplikasi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class PengaturanController extends Controller
 {
@@ -114,5 +115,20 @@ class PengaturanController extends Controller
                     return redirect()->back()->with('sukses', 'Berhasil Update Data');
                 }
         }
+    }
+    public function upload_akun(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:8',
+        ]);
+        $data = \App\Models\User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')),
+            
+        ]);
+        return redirect()->back()->with('sukses', 'Berhasil Menambahkan Akun Data');
     }
 }
