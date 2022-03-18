@@ -4,7 +4,7 @@
   #hero2 {
   width: 100%;
   height: 80vh;
-  background: url(@if($tentang == NULL) @else {{asset('gambar_tentang/'. $tentang->gambar)}} @endif) center center;
+  background: url(@if($depan1 == NULL) @else {{asset('gambar_info/'. $depan1->foto_info)}} @endif) center center;
   background-size: cover;
   position: relative;
   margin-top: 70px;

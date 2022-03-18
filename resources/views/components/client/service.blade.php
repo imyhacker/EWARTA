@@ -21,7 +21,7 @@
                         <div class="portfolio-info">
                             <h4><a href="{{route('selengkapnya', $in->slug_info)}}"
                                     style="text-transform: Capitalize">{{Str::limit($in->judul, 20)}} </a></h4>
-                            <p>{{$in->created_at->diffForHumans()}}</p>
+                            <p>{{$in->created_at->diffForHumans()}} - {{$in->dilihat ?? '0'}}x dilihat</p>
 
                         </div>
                     </div>

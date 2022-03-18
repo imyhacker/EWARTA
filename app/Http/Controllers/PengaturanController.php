@@ -32,19 +32,19 @@ class PengaturanController extends Controller
         if ($cek == NULL) {
             // gambar depan
             $path = 'gambar_depan';
-            $name_depan = date('YmdHis').'.'.$gambar_depan->getClientOriginalExtension();
+            $name_depan = 'Depan_'.date('YmdHis').'.'.$gambar_depan->getClientOriginalExtension();
             $gambar_depan->move($path, $name_depan);
             // gambar tentang
             $path2 = 'gambar_tentang';
-            $name_tentang = date('YmdHis').'.'.$gambar_tentang->getClientOriginalExtension();
+            $name_tentang = 'Tentang'.date('YmdHis').'.'.$gambar_tentang->getClientOriginalExtension();
             $gambar_tentang->move($path2, $name_tentang);
             // gambar info
             $path3 = 'gambar_info';
-            $name_info = date('YmdHis').'.'.$gambar_info->getClientOriginalExtension();
+            $name_info = 'Info'.date('YmdHis').'.'.$gambar_info->getClientOriginalExtension();
             $gambar_info->move($path3, $name_info);
             // gambar berita
             $path4 = 'gambar_berita';
-            $name_berita = date('YmdHis').'.'.$gambar_berita->getClientOriginalExtension();
+            $name_berita = 'Berita_'.date('YmdHis').'.'.$gambar_berita->getClientOriginalExtension();
             $gambar_berita->move($path4, $name_berita);
             // insert data
             $data = Aplikasi::create([
@@ -77,20 +77,20 @@ class PengaturanController extends Controller
         }
         if($cek == TRUE){
             
-                $path = 'gambar_depan';
-            $name_depan = date('YmdHis').'.'.$gambar_depan->getClientOriginalExtension();
+            $path = 'gambar_depan';
+            $name_depan = 'Depan_'.date('YmdHis').'.'.$gambar_depan->getClientOriginalExtension();
             $gambar_depan->move($path, $name_depan);
             // gambar tentang
             $path2 = 'gambar_tentang';
-            $name_tentang = date('YmdHis').'.'.$gambar_tentang->getClientOriginalExtension();
+            $name_tentang = 'Tentang'.date('YmdHis').'.'.$gambar_tentang->getClientOriginalExtension();
             $gambar_tentang->move($path2, $name_tentang);
             // gambar info
             $path3 = 'gambar_info';
-            $name_info = date('YmdHis').'.'.$gambar_info->getClientOriginalExtension();
+            $name_info = 'Info'.date('YmdHis').'.'.$gambar_info->getClientOriginalExtension();
             $gambar_info->move($path3, $name_info);
             // gambar berita
             $path4 = 'gambar_berita';
-            $name_berita = date('YmdHis').'.'.$gambar_berita->getClientOriginalExtension();
+            $name_berita = 'Berita_'.date('YmdHis').'.'.$gambar_berita->getClientOriginalExtension();
             $gambar_berita->move($path4, $name_berita);
             // insert data
             $data = Aplikasi::first()->update([

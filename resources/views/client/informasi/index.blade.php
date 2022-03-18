@@ -3,7 +3,7 @@
 
 <x-client.nav :depan1="$depan1"/>
   <!-- ======= Hero Section ======= -->
-  <x-client.informasi.informasi :tentang="$tentang" />
+  <x-client.informasi.informasi :tentang="$tentang" :depan1="$depan1"/>
 
   <main id="main">
 

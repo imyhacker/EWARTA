@@ -18,23 +18,27 @@
                         </ul>
                     </div>
                     <div class="col-md-12 mt-4">
+                        <h3>Berita Populer</h3>
+                        <ul class="list-group list-group-flush">
+                        @foreach($high as $h)
+                            <li class="list-group-item"><a href="{{route('selengkapnya', $h->slug)}}">{{$h->judul}}</a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="col-md-12 mt-4">
                         <h3>Berita Terbaru</h3>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                            <li class="list-group-item">A fourth item</li>
-                            <li class="list-group-item">And a fifth one</li>
+                            @foreach($bb as $bbc)
+                            <li class="list-group-item"><a href="{{route('selengkapnya', $bbc->slug)}}">{{$bbc->judul}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="col-md-12 mt-4">
                         <h3>Berita Acak</h3>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
-                            <li class="list-group-item">A fourth item</li>
-                            <li class="list-group-item">And a fifth one</li>
+                        @foreach($bac as $babc)
+                            <li class="list-group-item"><a href="{{route('selengkapnya', $babc->slug)}}">{{$babc->judul}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
