@@ -17,7 +17,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 mt-3">
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
                                             data-target="#tambahberita">
@@ -25,9 +25,9 @@
                                         </button>
 
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 mt-3">
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
+                                        <button type="button" class="btn btn-danger btn-block" data-toggle="modal"
                                             data-target="#tambahtag">
                                             Tambah Tag
                                         </button>
