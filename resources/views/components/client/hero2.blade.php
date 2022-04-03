@@ -56,6 +56,8 @@
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1 style="text-transform: Capitalize">{{$berita->judul}}</h1>
       <h2>{{$berita->created_at->diffForHumans()}}</h2>
-      <a href="#about" class="btn-get-started scrollto">{{$berita->tag}}</a>
+      <a href="#about" class="btn-get-started scrollto"><i class="bi bi-tag"></i> {{$berita->tag}}</a>
+      <a href="whatsapp://send?text={{Request::url()}}" class="btn-get-started scrollto scrollto"><i class="bi bi-whatsapp"></i> Share WhatAapp</a>
+
     </div>
   </section><!-- End hero2 -->

@@ -20,7 +20,7 @@
                         <div class="portfolio-info">
                             <h4><a href="{{route('selengkapnya', $b->slug)}}"
                                     style="text-transform: Capitalize">{{Str::limit($b->judul, 20)}} </a></h4>
-                            <p>{{$b->created_at->diffForHumans()}}</p>
+                            <p>{{$b->created_at->diffForHumans()}} - <i class="bi bi-eye"></i> {{$b->dilihat ?? '0'}} </p>
 
                         </div>
                     </div>

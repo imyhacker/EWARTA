@@ -56,7 +56,9 @@
       <div class="container text-center text-md-left" data-aos="fade-up">
         <h1 style="text-transform: Capitalize">{{$info->judul}}</h1>
         <h2>{{$info->created_at->diffForHumans()}}</h2>
-        <a href="#" type="button" class="btn-get-started scrollto">Uploaded By : {{$info->uploader}}</a>
+        <a href="#" type="button" class="btn-get-started scrollto"><i class="bi bi-person"></i> By : {{$info->uploader}}</a>
+        <a href="whatsapp://send?text={{Request::url()}}" class="btn-get-started scrollto scrollto"><i class="bi bi-whatsapp"></i> Share WhatAapp</a>
+
       </div>
     </section><!-- End hero2 -->
   
