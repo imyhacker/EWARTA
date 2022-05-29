@@ -4,7 +4,7 @@
             <div class="col-md-12">
                
                 {!! $info->isi !!}
-                <div id="disqus_thread"></div>
+                
             </div>
            
         </div>

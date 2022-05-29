@@ -33,7 +33,10 @@ class ClientController extends Controller
         $depan1 = Aplikasi::first();
         $tag = Tag::all();
         $berita = Berita::where('slug', $slug)->first();
-        return view('client/selengkapnya', compact('berita', 'depan1', 'tag'));
+        $acak = Berita::inRandomOrder()->limit(4)->get();
+        $terbaru = Berita::latest('created_at')->limit(4)->get();
+        //dd($berita_baru->judul);
+        return view('client/selengkapnya', compact('berita', 'depan1', 'tag', 'acak', 'terbaru'));
     }
     public function selengkapnya_info($slug_info)
     {
